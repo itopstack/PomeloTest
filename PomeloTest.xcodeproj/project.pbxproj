@@ -8,17 +8,27 @@
 
 /* Begin PBXBuildFile section */
 		9A0B821127C4F83E007812C1 /* PomeloTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B821027C4F83E007812C1 /* PomeloTestApp.swift */; };
-		9A0B821327C4F83E007812C1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B821227C4F83E007812C1 /* ContentView.swift */; };
 		9A0B821527C4F83F007812C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0B821427C4F83F007812C1 /* Assets.xcassets */; };
 		9A0B821827C4F83F007812C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0B821727C4F83F007812C1 /* Preview Assets.xcassets */; };
+		9A7985B427C5024A006CE26B /* NewYorkTimesArticleLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985B327C5024A006CE26B /* NewYorkTimesArticleLoader.swift */; };
+		9A7985B827C50332006CE26B /* NetworkSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985B727C50332006CE26B /* NetworkSession.swift */; };
+		9A7985BA27C50430006CE26B /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985B927C50430006CE26B /* Article.swift */; };
+		9A7985BC27C50B40006CE26B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985BB27C50B40006CE26B /* NetworkError.swift */; };
+		9A7985C127C51AA7006CE26B /* ArticleListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985C027C51AA7006CE26B /* ArticleListContentView.swift */; };
+		9A7985C327C51AC8006CE26B /* ArticleListContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9A0B820D27C4F83E007812C1 /* PomeloTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0B821027C4F83E007812C1 /* PomeloTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeloTestApp.swift; sourceTree = "<group>"; };
-		9A0B821227C4F83E007812C1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9A0B821427C4F83F007812C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9A0B821727C4F83F007812C1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9A7985B327C5024A006CE26B /* NewYorkTimesArticleLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkTimesArticleLoader.swift; sourceTree = "<group>"; };
+		9A7985B727C50332006CE26B /* NetworkSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSession.swift; sourceTree = "<group>"; };
+		9A7985B927C50430006CE26B /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		9A7985BB27C50B40006CE26B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		9A7985C027C51AA7006CE26B /* ArticleListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListContentView.swift; sourceTree = "<group>"; };
+		9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleListContentView+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +61,11 @@
 		9A0B820F27C4F83E007812C1 /* PomeloTest */ = {
 			isa = PBXGroup;
 			children = (
+				9A7985C427C51E02006CE26B /* Service */,
+				9A7985BD27C51A6A006CE26B /* View */,
+				9A7985B627C502C2006CE26B /* Model */,
+				9A7985B527C502B9006CE26B /* Protocol */,
 				9A0B821027C4F83E007812C1 /* PomeloTestApp.swift */,
-				9A0B821227C4F83E007812C1 /* ContentView.swift */,
 				9A0B821427C4F83F007812C1 /* Assets.xcassets */,
 				9A0B821627C4F83F007812C1 /* Preview Content */,
 			);
@@ -65,6 +78,56 @@
 				9A0B821727C4F83F007812C1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9A7985B527C502B9006CE26B /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				9A7985B727C50332006CE26B /* NetworkSession.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		9A7985B627C502C2006CE26B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9A7985B927C50430006CE26B /* Article.swift */,
+				9A7985BB27C50B40006CE26B /* NetworkError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9A7985BD27C51A6A006CE26B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9A7985BF27C51A90006CE26B /* ArticleDetail */,
+				9A7985BE27C51A80006CE26B /* ArticleList */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		9A7985BE27C51A80006CE26B /* ArticleList */ = {
+			isa = PBXGroup;
+			children = (
+				9A7985C027C51AA7006CE26B /* ArticleListContentView.swift */,
+				9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */,
+			);
+			path = ArticleList;
+			sourceTree = "<group>";
+		};
+		9A7985BF27C51A90006CE26B /* ArticleDetail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ArticleDetail;
+			sourceTree = "<group>";
+		};
+		9A7985C427C51E02006CE26B /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				9A7985B327C5024A006CE26B /* NewYorkTimesArticleLoader.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +200,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A0B821327C4F83E007812C1 /* ContentView.swift in Sources */,
+				9A7985B827C50332006CE26B /* NetworkSession.swift in Sources */,
 				9A0B821127C4F83E007812C1 /* PomeloTestApp.swift in Sources */,
+				9A7985C127C51AA7006CE26B /* ArticleListContentView.swift in Sources */,
+				9A7985BC27C50B40006CE26B /* NetworkError.swift in Sources */,
+				9A7985B427C5024A006CE26B /* NewYorkTimesArticleLoader.swift in Sources */,
+				9A7985C327C51AC8006CE26B /* ArticleListContentView+ViewModel.swift in Sources */,
+				9A7985BA27C50430006CE26B /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +344,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -305,7 +373,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

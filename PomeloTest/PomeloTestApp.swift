@@ -11,7 +11,7 @@ import SwiftUI
 struct PomeloTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ArticleListContentView(viewModel: ArticleListContentView.ViewModel())
         }
     }
 }
