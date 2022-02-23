@@ -17,7 +17,7 @@ struct Metadata: Codable {
     }
 }
 
-struct Article: Codable {
+struct Article: Codable, Equatable {
     let url: String?
     let id: Int?
     let publishedDate: String?
@@ -39,14 +39,14 @@ struct Article: Codable {
     }
 }
 
-struct Media: Codable {
-    let photo: [Photo]?
+struct Media: Codable, Equatable {
+    let photos: [Photo]?
     
     private enum CodingKeys: String, CodingKey {
-        case photo = "media-metadata"
+        case photos = "media-metadata"
     }
 }
 
-struct Photo: Codable {
+struct Photo: Codable, Equatable {
     let url: String?
 }

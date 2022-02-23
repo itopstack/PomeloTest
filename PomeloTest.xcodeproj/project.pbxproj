@@ -16,7 +16,18 @@
 		9A7985BC27C50B40006CE26B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985BB27C50B40006CE26B /* NetworkError.swift */; };
 		9A7985C127C51AA7006CE26B /* ArticleListContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985C027C51AA7006CE26B /* ArticleListContentView.swift */; };
 		9A7985C327C51AC8006CE26B /* ArticleListContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */; };
+		9ACADDAD27C6005600D53293 /* ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDAC27C6005600D53293 /* ArticleTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9ACADDAE27C6005600D53293 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9A0B820527C4F83E007812C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9A0B820C27C4F83E007812C1;
+			remoteInfo = PomeloTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9A0B820D27C4F83E007812C1 /* PomeloTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,10 +40,19 @@
 		9A7985BB27C50B40006CE26B /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		9A7985C027C51AA7006CE26B /* ArticleListContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleListContentView.swift; sourceTree = "<group>"; };
 		9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleListContentView+ViewModel.swift"; sourceTree = "<group>"; };
+		9ACADDAA27C6005600D53293 /* PomeloTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomeloTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9ACADDAC27C6005600D53293 /* ArticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9A0B820A27C4F83E007812C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ACADDA727C6005600D53293 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +66,7 @@
 			isa = PBXGroup;
 			children = (
 				9A0B820F27C4F83E007812C1 /* PomeloTest */,
+				9ACADDAB27C6005600D53293 /* PomeloTestTests */,
 				9A0B820E27C4F83E007812C1 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9A0B820D27C4F83E007812C1 /* PomeloTest.app */,
+				9ACADDAA27C6005600D53293 /* PomeloTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +152,14 @@
 			path = Service;
 			sourceTree = "<group>";
 		};
+		9ACADDAB27C6005600D53293 /* PomeloTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				9ACADDAC27C6005600D53293 /* ArticleTests.swift */,
+			);
+			path = PomeloTestTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -150,6 +180,24 @@
 			productReference = 9A0B820D27C4F83E007812C1 /* PomeloTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9ACADDA927C6005600D53293 /* PomeloTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9ACADDB227C6005600D53293 /* Build configuration list for PBXNativeTarget "PomeloTestTests" */;
+			buildPhases = (
+				9ACADDA627C6005600D53293 /* Sources */,
+				9ACADDA727C6005600D53293 /* Frameworks */,
+				9ACADDA827C6005600D53293 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9ACADDAF27C6005600D53293 /* PBXTargetDependency */,
+			);
+			name = PomeloTestTests;
+			productName = PomeloTestTests;
+			productReference = 9ACADDAA27C6005600D53293 /* PomeloTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -162,6 +210,10 @@
 				TargetAttributes = {
 					9A0B820C27C4F83E007812C1 = {
 						CreatedOnToolsVersion = 13.2.1;
+					};
+					9ACADDA927C6005600D53293 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 9A0B820C27C4F83E007812C1;
 					};
 				};
 			};
@@ -179,6 +231,7 @@
 			projectRoot = "";
 			targets = (
 				9A0B820C27C4F83E007812C1 /* PomeloTest */,
+				9ACADDA927C6005600D53293 /* PomeloTestTests */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +243,13 @@
 			files = (
 				9A0B821827C4F83F007812C1 /* Preview Assets.xcassets in Resources */,
 				9A0B821527C4F83F007812C1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9ACADDA827C6005600D53293 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +270,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9ACADDA627C6005600D53293 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9ACADDAD27C6005600D53293 /* ArticleTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9ACADDAF27C6005600D53293 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9A0B820C27C4F83E007812C1 /* PomeloTest */;
+			targetProxy = 9ACADDAE27C6005600D53293 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		9A0B821927C4F83F007812C1 /* Debug */ = {
@@ -387,6 +463,40 @@
 			};
 			name = Release;
 		};
+		9ACADDB027C6005600D53293 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PomeloTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PomeloTest.app/PomeloTest";
+			};
+			name = Debug;
+		};
+		9ACADDB127C6005600D53293 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.PomeloTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PomeloTest.app/PomeloTest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -404,6 +514,15 @@
 			buildConfigurations = (
 				9A0B821C27C4F83F007812C1 /* Debug */,
 				9A0B821D27C4F83F007812C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9ACADDB227C6005600D53293 /* Build configuration list for PBXNativeTarget "PomeloTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9ACADDB027C6005600D53293 /* Debug */,
+				9ACADDB127C6005600D53293 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
