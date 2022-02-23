@@ -13,7 +13,7 @@ extension ArticleListContentView {
     @MainActor
     class ViewModel: ObservableObject {
         
-        @Published private(set) var article = Article()
+        @Published private(set) var articles: [Article] = []
         
         private let articleLoader: NewYorkTimesArticleLoaderInterface
 
@@ -27,8 +27,8 @@ extension ArticleListContentView {
             request.timeoutInterval = 10
             
             do {
-                article = try await articleLoader.loadArticles(from: request, decoder: JSONDecoder())
-            } catch {
+                articles = try await articleLoader.loadArticles(from: request, decoder: JSONDecoder())
+            } catch {   
             }
         }
     }
