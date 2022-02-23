@@ -23,12 +23,11 @@ extension ArticleListContentView {
         
         func fetchArticles() async {
             guard let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=zF125X7ymsICk7EhIvzcQrJaAVPFoUc6") else { return }
-            var request = URLRequest(url: url)
-            request.timeoutInterval = 10
             
             do {
-                articles = try await articleLoader.loadArticles(from: request, decoder: JSONDecoder())
-            } catch {   
+                articles = try await articleLoader.loadArticles(from: url)
+            } catch {
+                
             }
         }
     }

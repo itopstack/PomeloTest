@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NewYorkTimesArticleLoaderInterface {
-    func loadArticles(from request: URLRequest, decoder: JSONDecoder) async throws -> [Article]
+    func loadArticles(from url: URL) async throws -> [Article]
 }
 
 struct NewYorkTimesArticleLoader: NewYorkTimesArticleLoaderInterface {
@@ -19,11 +19,14 @@ struct NewYorkTimesArticleLoader: NewYorkTimesArticleLoaderInterface {
         self.session = session
     }
     
-    func loadArticles(from request: URLRequest, decoder: JSONDecoder) async throws -> [Article] {
+    func loadArticles(from url: URL) async throws -> [Article] {
+        var request = URLRequest(url: url)
+        request.timeoutInterval = 10
+        
         let (data, response) = try await session.data(for: request, delegate: nil)
         
         guard let httpResponse = response as? HTTPURLResponse else {
-            throw NetworkError.missingURLResponse
+            throw NetworkError.missingHTTPURLResponse
         }
         
         switch httpResponse.statusCode {
@@ -34,7 +37,7 @@ struct NewYorkTimesArticleLoader: NewYorkTimesArticleLoaderInterface {
         case 500:
             throw NetworkError.serverError
         case 200:
-            let metadata = try decoder.decode(Metadata.self, from: data)
+            let metadata = try JSONDecoder().decode(Metadata.self, from: data)
             return metadata.articles ?? []
         default:
             throw NetworkError.unknown

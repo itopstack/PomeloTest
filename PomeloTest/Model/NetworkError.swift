@@ -10,7 +10,7 @@ import Foundation
 enum NetworkError: LocalizedError {
     case unauthorized
     case tooManyRequests
-    case missingURLResponse
+    case missingHTTPURLResponse
     case serverError
     case unknown
     
@@ -20,8 +20,8 @@ enum NetworkError: LocalizedError {
             return "Unauthorized, please check you api key"
         case .tooManyRequests:
             return "You have attempted maximum number of calling api, please try again later"
-        case .missingURLResponse:
-            return "Missing url response"
+        case .missingHTTPURLResponse:
+            return "Missing http url response"
         case .serverError:
             return "Internal server error"
         case .unknown:

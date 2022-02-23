@@ -18,6 +18,7 @@
 		9A7985C327C51AC8006CE26B /* ArticleListContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */; };
 		9ACADDAD27C6005600D53293 /* ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDAC27C6005600D53293 /* ArticleTests.swift */; };
 		9ACADDB527C6075D00D53293 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDB427C6075D00D53293 /* NetworkErrorTests.swift */; };
+		9ACADDB827C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDB727C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9ACADDAA27C6005600D53293 /* PomeloTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PomeloTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACADDAC27C6005600D53293 /* ArticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTests.swift; sourceTree = "<group>"; };
 		9ACADDB427C6075D00D53293 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
+		9ACADDB727C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkTimesArticleLoaderTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		9ACADDAB27C6005600D53293 /* PomeloTestTests */ = {
 			isa = PBXGroup;
 			children = (
+				9ACADDB627C60AA700D53293 /* ServiceTests */,
 				9ACADDB327C6074100D53293 /* ModelTests */,
 			);
 			path = PomeloTestTests;
@@ -169,6 +172,14 @@
 				9ACADDB427C6075D00D53293 /* NetworkErrorTests.swift */,
 			);
 			path = ModelTests;
+			sourceTree = "<group>";
+		};
+		9ACADDB627C60AA700D53293 /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				9ACADDB727C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift */,
+			);
+			path = ServiceTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,6 +298,7 @@
 			files = (
 				9ACADDAD27C6005600D53293 /* ArticleTests.swift in Sources */,
 				9ACADDB527C6075D00D53293 /* NetworkErrorTests.swift in Sources */,
+				9ACADDB827C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

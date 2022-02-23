@@ -34,10 +34,10 @@ final class NetworkErrorTests: XCTestCase {
     
     func testInitMissingURLResponse() {
         // Given
-        let expected = "Missing url response"
+        let expected = "Missing http url response"
         
         // When
-        let error = NetworkError.missingURLResponse
+        let error = NetworkError.missingHTTPURLResponse
         
         // Then
         XCTAssertEqual(error.localizedDescription, expected)
