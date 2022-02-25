@@ -19,6 +19,8 @@
 		9ACADDAD27C6005600D53293 /* ArticleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDAC27C6005600D53293 /* ArticleTests.swift */; };
 		9ACADDB527C6075D00D53293 /* NetworkErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDB427C6075D00D53293 /* NetworkErrorTests.swift */; };
 		9ACADDB827C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDB727C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift */; };
+		9ACADDBA27C8E83700D53293 /* ArticleCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDB927C8E83700D53293 /* ArticleCellContentView.swift */; };
+		9ACADDBC27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDBB27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		9ACADDAC27C6005600D53293 /* ArticleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTests.swift; sourceTree = "<group>"; };
 		9ACADDB427C6075D00D53293 /* NetworkErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkErrorTests.swift; sourceTree = "<group>"; };
 		9ACADDB727C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewYorkTimesArticleLoaderTests.swift; sourceTree = "<group>"; };
+		9ACADDB927C8E83700D53293 /* ArticleCellContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellContentView.swift; sourceTree = "<group>"; };
+		9ACADDBB27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleCellContentView+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 			children = (
 				9A7985C027C51AA7006CE26B /* ArticleListContentView.swift */,
 				9A7985C227C51AC8006CE26B /* ArticleListContentView+ViewModel.swift */,
+				9ACADDB927C8E83700D53293 /* ArticleCellContentView.swift */,
+				9ACADDBB27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift */,
 			);
 			path = ArticleList;
 			sourceTree = "<group>";
@@ -283,6 +289,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9A7985B827C50332006CE26B /* NetworkSession.swift in Sources */,
+				9ACADDBC27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift in Sources */,
+				9ACADDBA27C8E83700D53293 /* ArticleCellContentView.swift in Sources */,
 				9A0B821127C4F83E007812C1 /* PomeloTestApp.swift in Sources */,
 				9A7985C127C51AA7006CE26B /* ArticleListContentView.swift in Sources */,
 				9A7985BC27C50B40006CE26B /* NetworkError.swift in Sources */,

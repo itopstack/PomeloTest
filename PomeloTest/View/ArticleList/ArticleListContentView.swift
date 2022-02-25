@@ -11,10 +11,24 @@ struct ArticleListContentView: View {
     @StateObject var viewModel: ViewModel
     
     var body: some View {
-        Text("Hello, World!")
+        NavigationView {
+            ZStack {
+                if viewModel.isLoading {
+                    ProgressView()
+                } else {
+                    List(viewModel.articles) { article in
+                        ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
+                    }
+                    .refreshable {
+                        await viewModel.fetchArticles()
+                    }
+                }
+            }
             .task {
                 await viewModel.fetchArticles()
             }
+            .navigationTitle("Articles")
+        }
     }
 }
 

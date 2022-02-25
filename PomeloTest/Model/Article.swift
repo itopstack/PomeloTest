@@ -17,7 +17,7 @@ struct Metadata: Codable {
     }
 }
 
-struct Article: Codable, Equatable {
+struct Article: Codable, Equatable, Identifiable {
     let url: String?
     let id: Int?
     let publishedDate: String?

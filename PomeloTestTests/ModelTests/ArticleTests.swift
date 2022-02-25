@@ -60,7 +60,7 @@ final class ArticleTests: XCTestCase {
     func testInitMetadata() {
         // Given
         let expectedNumberOfResults = 20
-        let expectedArticles: [Article] = [.mock]
+        let expectedArticles: [Article] = [ArticleCellContentView_Previews.mockArticle]
         
         // When
         let metadata = Metadata(numberOfResults: expectedNumberOfResults, articles: expectedArticles)
@@ -69,18 +69,4 @@ final class ArticleTests: XCTestCase {
         XCTAssertEqual(metadata.numberOfResults, expectedNumberOfResults)
         XCTAssertEqual(metadata.articles, expectedArticles)
     }
-}
-
-private extension Article {
-    
-    static let mock = Article(
-        url: "https://www.nytimes.com/2022/02/20/your-money/bernie-madoff-sister-dead.html",
-        id: 100000008220223,
-        publishedDate: "2022-02-20",
-        updatedDate: "2022-02-21 22:57:50",
-        section: "Your Money",
-        title: "Bernie Madoff’s Sister and Her Husband Are Found Dead in Florida",
-        abstract: "The authorities said it appeared to be a murder-suicide.",
-        medias: [Media(photos: [Photo(url: "https://static01.nyt.com/images/2022/02/20/multimedia/20madoff/20madoff-thumbStandard.jpg")])]
-    )
 }
