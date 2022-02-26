@@ -67,9 +67,14 @@ struct ArticleDetailContentView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        viewModel.share()
+                        viewModel.presentShareActivity = true
                     } label: {
                         Image(systemName: "square.and.arrow.up")
+                    }
+                    .sheet(isPresented: $viewModel.presentShareActivity) {
+                        if let articleLink = viewModel.articleLink {
+                            ActivityViewController(activityItems: [articleLink])
+                        }
                     }
                 }
             }

@@ -12,6 +12,8 @@ extension ArticleDetailContentView {
     
     class ViewModel: ObservableObject {
         
+        @Published var presentShareActivity = false
+        
         private let article: Article
         
         init(article: Article) {
@@ -62,10 +64,6 @@ extension ArticleDetailContentView {
         
         var updatedDate: String {
             article.updatedDate ?? ""
-        }
-        
-        func share() {
-            
         }
     }
 }
