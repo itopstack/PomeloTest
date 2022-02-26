@@ -26,5 +26,9 @@ extension ArticleCellContentView {
         var subtitle: String {
             article.abstract ?? ""
         }
+        
+        var updatedDate: String {
+            article.updatedDate ?? ""
+        }
     }
 }

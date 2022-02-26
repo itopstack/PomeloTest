@@ -11,7 +11,7 @@ struct ArticleCellContentView: View {
     let viewModel: ViewModel
     
     var body: some View {
-        HStack(alignment: .top) {
+        HStack(alignment: .top, spacing: 16) {
             AsyncImage(url: viewModel.thumbnailImageUrl) { image in
                 image
             } placeholder: {
@@ -24,6 +24,13 @@ struct ArticleCellContentView: View {
                     .font(.headline)
                 Text(viewModel.subtitle)
                     .font(.subheadline)
+                
+                HStack {
+                    Spacer()
+                    Text(viewModel.updatedDate)
+                        .font(.footnote)
+                        .italic()
+                }
             }
         }
         .padding(.vertical, 4)
