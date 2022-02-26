@@ -16,7 +16,7 @@ struct ArticleListContentView: View {
                 if viewModel.isLoading {
                     ProgressView()
                 } else {
-                    List(viewModel.articles) { article in
+                    List(viewModel.searchArticlesResult) { article in
                         ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
                     }
                     .refreshable {
@@ -28,6 +28,7 @@ struct ArticleListContentView: View {
                 await viewModel.fetchArticles()
             }
             .navigationTitle("Articles")
+            .searchable(text: $viewModel.searchText)
         }
     }
 }

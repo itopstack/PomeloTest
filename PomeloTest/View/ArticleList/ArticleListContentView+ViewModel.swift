@@ -15,11 +15,25 @@ extension ArticleListContentView {
         
         @Published private(set) var articles: [Article] = []
         @Published private(set) var isLoading = false
+        @Published var searchText = ""
         
         private let articleLoader: NewYorkTimesArticleLoaderInterface
 
         init(articleLoader: NewYorkTimesArticleLoaderInterface = NewYorkTimesArticleLoader()) {
             self.articleLoader = articleLoader
+        }
+        
+        var searchArticlesResult: [Article] {
+            if searchText.isEmpty {
+                return articles
+            } else {
+                return articles.filter {
+                    let title = ($0.title ?? "").lowercased()
+                    let abstract = ($0.abstract ?? "").lowercased()
+                    let keyword = searchText.lowercased()
+                    return title.contains(keyword) || abstract.contains(keyword)
+                }
+            }
         }
         
         func fetchArticles() async {
