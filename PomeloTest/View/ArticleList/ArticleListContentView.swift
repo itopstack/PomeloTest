@@ -16,11 +16,19 @@ struct ArticleListContentView: View {
                 if viewModel.isLoading {
                     ProgressView()
                 } else {
-                    List(viewModel.searchArticlesResult) { article in
-                        NavigationLink {
-                            ArticleDetailContentView(viewModel: ArticleDetailContentView.ViewModel(article: article))
-                        } label: {
-                            ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
+                    List {
+                        ForEach(Array(viewModel.searchSectionsResult.keys), id: \.self) { section in
+                            if let articles = viewModel.searchSectionsResult[section] {
+                                Section(section) {
+                                    ForEach(articles) { article in
+                                        NavigationLink {
+                                            ArticleDetailContentView(viewModel: ArticleDetailContentView.ViewModel(article: article))
+                                        } label: {
+                                            ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
+                                        }
+                                    }
+                                }
+                            }
                         }
                     }
                     .refreshable {

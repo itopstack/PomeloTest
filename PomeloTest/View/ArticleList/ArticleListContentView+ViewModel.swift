@@ -13,9 +13,9 @@ extension ArticleListContentView {
     @MainActor
     class ViewModel: ObservableObject {
         
-        @Published private(set) var articles: [Article] = []
         @Published private(set) var isLoading = false
         @Published var searchText = ""
+        @Published private var articles: [Article] = []
         private(set) var period: Period = .day
         var isFirstLoadArticle = true
         
@@ -25,16 +25,19 @@ extension ArticleListContentView {
             self.articleLoader = articleLoader
         }
         
-        var searchArticlesResult: [Article] {
+        var searchSectionsResult: [String: [Article]] {
             if searchText.isEmpty {
-                return articles
+                return groupArticlesIntoSection(from: articles)
             } else {
-                return articles.filter {
-                    let title = ($0.title ?? "").lowercased()
-                    let abstract = ($0.abstract ?? "").lowercased()
-                    let keyword = searchText.lowercased()
-                    return title.contains(keyword) || abstract.contains(keyword)
-                }
+                return groupArticlesIntoSection(from: articles)
+                
+//                let filteredArticles = articles.filter {
+//                    let title = ($0.title ?? "").lowercased()
+//                    let abstract = ($0.abstract ?? "").lowercased()
+//                    let keyword = searchText.lowercased()
+//                    return title.contains(keyword) || abstract.contains(keyword)
+//                }
+//                return groupArticlesIntoSection(from: filteredArticles)
             }
         }
         
@@ -50,6 +53,19 @@ extension ArticleListContentView {
             }
             
             isLoading = false
+        }
+        
+        private func groupArticlesIntoSection(from articles: [Article]) -> [String: [Article]] {
+            var sections: [String: [Article]] = [:]
+            for article in articles {
+                if let section = article.section, !section.isEmpty {
+                    sections[section, default: []].append(article)
+                } else {
+                    sections["Others", default: []].append(article)
+                }
+            }
+            
+            return sections
         }
         
         func updatePeriod(_ period: Period) async {
