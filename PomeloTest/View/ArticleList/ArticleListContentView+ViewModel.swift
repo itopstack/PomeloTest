@@ -16,6 +16,7 @@ extension ArticleListContentView {
         @Published private(set) var articles: [Article] = []
         @Published private(set) var isLoading = false
         @Published var searchText = ""
+        private(set) var period: Period = .day
         
         private let articleLoader: NewYorkTimesArticleLoaderInterface
 
@@ -37,7 +38,7 @@ extension ArticleListContentView {
         }
         
         func fetchArticles() async {
-            guard let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=zF125X7ymsICk7EhIvzcQrJaAVPFoUc6") else { return }
+            guard let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/viewed/\(period.valueInDay).json?api-key=zF125X7ymsICk7EhIvzcQrJaAVPFoUc6") else { return }
             
             isLoading = true
             
@@ -48,6 +49,12 @@ extension ArticleListContentView {
             }
             
             isLoading = false
+        }
+        
+        func updatePeriod(_ period: Period) async {
+            guard period != self.period else { return }
+            self.period = period
+            await fetchArticles()
         }
     }
 }

@@ -27,8 +27,55 @@ struct ArticleListContentView: View {
             .task {
                 await viewModel.fetchArticles()
             }
-            .navigationTitle("Articles")
+            .navigationTitle("Popular Articles")
             .searchable(text: $viewModel.searchText)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Menu {
+                        Button {
+                            Task {
+                                await viewModel.updatePeriod(.day)
+                            }
+                        } label: {
+                            HStack {
+                                Text("Day")
+                                if viewModel.period == .day {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+                        
+                        Button {
+                            Task {
+                                await viewModel.updatePeriod(.week)
+                            }
+                        } label: {
+                            HStack {
+                                Text("Week")
+                                if viewModel.period == .week {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+                        
+                        Button {
+                            Task {
+                                await viewModel.updatePeriod(.month)
+                            }
+                        } label: {
+                            HStack {
+                                Text("Month")
+                                if viewModel.period == .month {
+                                    Image(systemName: "checkmark")
+                                }
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "newspaper")
+                            .foregroundColor(.secondary)
+                    }
+                }
+            }
         }
     }
 }
