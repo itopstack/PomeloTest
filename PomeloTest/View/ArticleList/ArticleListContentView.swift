@@ -17,7 +17,11 @@ struct ArticleListContentView: View {
                     ProgressView()
                 } else {
                     List(viewModel.searchArticlesResult) { article in
-                        ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
+                        NavigationLink {
+                            ArticleDetailContentView(viewModel: ArticleDetailContentView.ViewModel(article: article))
+                        } label: {
+                            ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
+                        }
                     }
                     .refreshable {
                         await viewModel.fetchArticles()
@@ -25,7 +29,10 @@ struct ArticleListContentView: View {
                 }
             }
             .task {
-                await viewModel.fetchArticles()
+                if viewModel.isFirstLoadArticle {
+                    await viewModel.fetchArticles()
+                    viewModel.isFirstLoadArticle = false
+                }
             }
             .navigationTitle("Popular Articles")
             .searchable(text: $viewModel.searchText)
@@ -71,8 +78,7 @@ struct ArticleListContentView: View {
                             }
                         }
                     } label: {
-                        Image(systemName: "newspaper")
-                            .foregroundColor(.secondary)
+                        Image(systemName: "timer")
                     }
                 }
             }

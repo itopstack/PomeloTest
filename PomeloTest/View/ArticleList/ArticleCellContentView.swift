@@ -15,7 +15,7 @@ struct ArticleCellContentView: View {
             AsyncImage(url: viewModel.thumbnailImageUrl) { image in
                 image
             } placeholder: {
-                Image("article_thumbnail_placeholder")
+                ProgressView()
             }
             .frame(width: 75, height: 75)
             
@@ -47,7 +47,8 @@ struct ArticleCellContentView_Previews: PreviewProvider {
         section: "Your Money",
         title: "Bernie Madoff’s Sister and Her Husband Are Found Dead in Florida",
         abstract: "The authorities said it appeared to be a murder-suicide.",
-        medias: [Media(photos: [Photo(url: "https://static01.nyt.com/images/2022/02/20/multimedia/20madoff/20madoff-thumbStandard.jpg")])]
+        medias: [Media(photos: [Photo(url: "https://static01.nyt.com/images/2022/02/20/multimedia/20madoff/20madoff-thumbStandard.jpg")], caption: "President Vladimir V. Putin of Russia meeting with President Donald J. Trump in June 2019.")],
+        source: "New York Times"
     )
     
     static var previews: some View {

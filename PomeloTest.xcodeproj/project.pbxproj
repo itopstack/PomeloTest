@@ -22,6 +22,8 @@
 		9ACADDBA27C8E83700D53293 /* ArticleCellContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDB927C8E83700D53293 /* ArticleCellContentView.swift */; };
 		9ACADDBC27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDBB27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift */; };
 		9ACADDBE27C9F6B100D53293 /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDBD27C9F6B100D53293 /* Period.swift */; };
+		9ACADDC027CA0D2700D53293 /* ArticleDetailContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDBF27CA0D2700D53293 /* ArticleDetailContentView.swift */; };
+		9ACADDC227CA0D4100D53293 /* ArticleDetailContentView+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ACADDC127CA0D4100D53293 /* ArticleDetailContentView+ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		9ACADDB927C8E83700D53293 /* ArticleCellContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleCellContentView.swift; sourceTree = "<group>"; };
 		9ACADDBB27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleCellContentView+ViewModel.swift"; sourceTree = "<group>"; };
 		9ACADDBD27C9F6B100D53293 /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
+		9ACADDBF27CA0D2700D53293 /* ArticleDetailContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailContentView.swift; sourceTree = "<group>"; };
+		9ACADDC127CA0D4100D53293 /* ArticleDetailContentView+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticleDetailContentView+ViewModel.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +157,8 @@
 		9A7985BF27C51A90006CE26B /* ArticleDetail */ = {
 			isa = PBXGroup;
 			children = (
+				9ACADDBF27CA0D2700D53293 /* ArticleDetailContentView.swift */,
+				9ACADDC127CA0D4100D53293 /* ArticleDetailContentView+ViewModel.swift */,
 			);
 			path = ArticleDetail;
 			sourceTree = "<group>";
@@ -294,11 +300,13 @@
 				9ACADDBE27C9F6B100D53293 /* Period.swift in Sources */,
 				9A7985B827C50332006CE26B /* NetworkSession.swift in Sources */,
 				9ACADDBC27C8E85600D53293 /* ArticleCellContentView+ViewModel.swift in Sources */,
+				9ACADDC227CA0D4100D53293 /* ArticleDetailContentView+ViewModel.swift in Sources */,
 				9ACADDBA27C8E83700D53293 /* ArticleCellContentView.swift in Sources */,
 				9A0B821127C4F83E007812C1 /* PomeloTestApp.swift in Sources */,
 				9A7985C127C51AA7006CE26B /* ArticleListContentView.swift in Sources */,
 				9A7985BC27C50B40006CE26B /* NetworkError.swift in Sources */,
 				9A7985B427C5024A006CE26B /* NewYorkTimesArticleLoader.swift in Sources */,
+				9ACADDC027CA0D2700D53293 /* ArticleDetailContentView.swift in Sources */,
 				9A7985C327C51AC8006CE26B /* ArticleListContentView+ViewModel.swift in Sources */,
 				9A7985BA27C50430006CE26B /* Article.swift in Sources */,
 			);

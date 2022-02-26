@@ -17,6 +17,7 @@ extension ArticleListContentView {
         @Published private(set) var isLoading = false
         @Published var searchText = ""
         private(set) var period: Period = .day
+        var isFirstLoadArticle = true
         
         private let articleLoader: NewYorkTimesArticleLoaderInterface
 

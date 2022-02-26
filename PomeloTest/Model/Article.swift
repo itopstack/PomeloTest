@@ -26,6 +26,7 @@ struct Article: Codable, Equatable, Identifiable {
     let title: String?
     let abstract: String?
     let medias: [Media]?
+    let source: String?
     
     private enum CodingKeys: String, CodingKey {
         case url
@@ -36,14 +37,17 @@ struct Article: Codable, Equatable, Identifiable {
         case title
         case abstract
         case medias = "media"
+        case source
     }
 }
 
 struct Media: Codable, Equatable {
     let photos: [Photo]?
+    let caption: String?
     
     private enum CodingKeys: String, CodingKey {
         case photos = "media-metadata"
+        case caption
     }
 }
 

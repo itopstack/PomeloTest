@@ -24,12 +24,14 @@ final class ArticleTests: XCTestCase {
     func testInitMedia() {
         // Given
         let expectedPhotos = [Photo(url: "https://static01.nyt.com/images/2022/02/20/multimedia/20madoff/20madoff-thumbStandard.jpg")]
+        let expectedCaption = "President Vladimir V. Putin of Russia meeting with President Donald J. Trump in June 2019."
         
         // When
-        let media = Media(photos: expectedPhotos)
+        let media = Media(photos: expectedPhotos, caption: expectedCaption)
         
         // Then
         XCTAssertEqual(media.photos, expectedPhotos)
+        XCTAssertEqual(media.caption, expectedCaption)
     }
     
     func testInitArticle() {
@@ -41,10 +43,11 @@ final class ArticleTests: XCTestCase {
         let expectedSection = "Your Money"
         let expectedTitle = "Bernie Madoff’s Sister and Her Husband Are Found Dead in Florida"
         let expectedAbstract = "The authorities said it appeared to be a murder-suicide."
-        let expectedMedias = [Media(photos: [Photo(url: "https://static01.nyt.com/images/2022/02/20/multimedia/20madoff/20madoff-thumbStandard.jpg")])]
+        let expectedMedias = [Media(photos: [Photo(url: "https://static01.nyt.com/images/2022/02/20/multimedia/20madoff/20madoff-thumbStandard.jpg")], caption: "President Vladimir V. Putin of Russia meeting with President Donald J. Trump in June 2019.")]
+        let expectedSource = "New York Times"
         
         // When
-        let article = Article(url: expectedUrl, id: expectedId, publishedDate: expectedPublishedDate, updatedDate: expectedUpdatedDate, section: expectedSection, title: expectedTitle, abstract: expectedAbstract, medias: expectedMedias)
+        let article = Article(url: expectedUrl, id: expectedId, publishedDate: expectedPublishedDate, updatedDate: expectedUpdatedDate, section: expectedSection, title: expectedTitle, abstract: expectedAbstract, medias: expectedMedias, source: expectedSource)
         
         // Then
         XCTAssertEqual(article.url, expectedUrl)
@@ -55,6 +58,7 @@ final class ArticleTests: XCTestCase {
         XCTAssertEqual(article.title, expectedTitle)
         XCTAssertEqual(article.abstract, expectedAbstract)
         XCTAssertEqual(article.medias, expectedMedias)
+        XCTAssertEqual(article.source, expectedSource)
     }
     
     func testInitMetadata() {
