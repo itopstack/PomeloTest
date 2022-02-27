@@ -15,7 +15,8 @@ extension ArticleListContentView {
         
         @Published private(set) var isLoading = false
         @Published var searchText = ""
-        @Published private var articles: [Article] = []
+        @Published private var sections: [ArticleSection] = []
+        private var articles: [Article] = []
         private(set) var period: Period = .day
         var isFirstLoadArticle = true
         
@@ -25,19 +26,18 @@ extension ArticleListContentView {
             self.articleLoader = articleLoader
         }
         
-        var searchSectionsResult: [String: [Article]] {
+        var searchSectionsResult: [ArticleSection] {
             if searchText.isEmpty {
-                return groupArticlesIntoSection(from: articles)
+                return sections
             } else {
-                return groupArticlesIntoSection(from: articles)
-                
-//                let filteredArticles = articles.filter {
-//                    let title = ($0.title ?? "").lowercased()
-//                    let abstract = ($0.abstract ?? "").lowercased()
-//                    let keyword = searchText.lowercased()
-//                    return title.contains(keyword) || abstract.contains(keyword)
-//                }
-//                return groupArticlesIntoSection(from: filteredArticles)
+                let filteredArticles = articles.filter {
+                    let title = ($0.title ?? "").lowercased()
+                    let abstract = ($0.abstract ?? "").lowercased()
+                    let keyword = searchText.lowercased()
+                    return title.contains(keyword) || abstract.contains(keyword)
+                }
+                let filteredSections = groupArticlesIntoSection(from: filteredArticles)
+                return filteredSections
             }
         }
         
@@ -47,7 +47,9 @@ extension ArticleListContentView {
             isLoading = true
             
             do {
-                articles = try await articleLoader.loadArticles(from: url)
+                let articles = try await articleLoader.loadArticles(from: url)
+                self.articles = articles
+                sections = groupArticlesIntoSection(from: articles)
             } catch {
                 
             }
@@ -55,14 +57,21 @@ extension ArticleListContentView {
             isLoading = false
         }
         
-        private func groupArticlesIntoSection(from articles: [Article]) -> [String: [Article]] {
-            var sections: [String: [Article]] = [:]
+        private func groupArticlesIntoSection(from articles: [Article]) -> [ArticleSection] {
+            var dict: [String: [Article]] = [:]
             for article in articles {
                 if let section = article.section, !section.isEmpty {
-                    sections[section, default: []].append(article)
+                    dict[section, default: []].append(article)
                 } else {
-                    sections["Others", default: []].append(article)
+                    dict["Others", default: []].append(article)
                 }
+            }
+            let sortedDict = dict.sorted(by: { $0.key < $1.key })
+            
+            var sections: [ArticleSection] = []
+            for tuple in sortedDict {
+                let section = ArticleSection(title: tuple.key, items: tuple.value)
+                sections.append(section)
             }
             
             return sections

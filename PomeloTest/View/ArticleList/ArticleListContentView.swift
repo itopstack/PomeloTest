@@ -17,15 +17,13 @@ struct ArticleListContentView: View {
                     ProgressView()
                 } else {
                     List {
-                        ForEach(Array(viewModel.searchSectionsResult.keys), id: \.self) { section in
-                            if let articles = viewModel.searchSectionsResult[section] {
-                                Section(section) {
-                                    ForEach(articles) { article in
-                                        NavigationLink {
-                                            ArticleDetailContentView(viewModel: ArticleDetailContentView.ViewModel(article: article))
-                                        } label: {
-                                            ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
-                                        }
+                        ForEach(viewModel.searchSectionsResult) { section in
+                            Section(section.title) {
+                                ForEach(section.items) { article in
+                                    NavigationLink {
+                                        ArticleDetailContentView(viewModel: ArticleDetailContentView.ViewModel(article: article))
+                                    } label: {
+                                        ArticleCellContentView(viewModel: ArticleCellContentView.ViewModel(article: article))
                                     }
                                 }
                             }

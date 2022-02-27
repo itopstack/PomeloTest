@@ -24,6 +24,7 @@ struct ArticleDetailContentView: View {
                 Text(viewModel.imageCaption)
                     .font(.caption)
                     .multilineTextAlignment(.center)
+                    .padding(.horizontal)
                 
                 VStack(alignment: .leading, spacing: 16) {
                     Text(viewModel.title)
