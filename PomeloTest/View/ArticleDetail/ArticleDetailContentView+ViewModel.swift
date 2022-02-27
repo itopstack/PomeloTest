@@ -39,12 +39,12 @@ extension ArticleDetailContentView {
             article.abstract ?? ""
         }
         
-        var imageWidth: CGFloat {
-            min(UIScreen.main.bounds.width, 440)
+        func imageWidth(from screenWidth: CGFloat) -> CGFloat {
+            min(screenWidth, 440)
         }
         
-        var imageHeight: CGFloat {
-            imageWidth * 293/440
+        func imageHeight(from screenWidth: CGFloat) -> CGFloat {
+            imageWidth(from: screenWidth) * 293/440
         }
         
         var articleLink: URL? {
