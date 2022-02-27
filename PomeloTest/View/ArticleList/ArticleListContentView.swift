@@ -29,6 +29,15 @@ struct ArticleListContentView: View {
                             }
                         }
                     }
+                    .alert("Error", isPresented: $viewModel.presentErrorAlert, actions: {
+                        Button("Reload") {
+                            Task {
+                                await viewModel.fetchArticles()
+                            }
+                        }
+                    }, message: {
+                        Text(viewModel.errorMessage ?? "")
+                    })
                     .refreshable {
                         await viewModel.fetchArticles()
                     }

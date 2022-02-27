@@ -16,6 +16,8 @@ extension ArticleListContentView {
         @Published private(set) var isLoading = false
         @Published var searchText = ""
         @Published private var sections: [ArticleSection] = []
+        @Published var presentErrorAlert = false
+        @Published private(set) var errorMessage: String?
         private var articles: [Article] = []
         private(set) var period: Period = .day
         var isFirstLoadArticle = true
@@ -51,7 +53,8 @@ extension ArticleListContentView {
                 self.articles = articles
                 sections = groupArticlesIntoSection(from: articles)
             } catch {
-                
+                self.errorMessage = error.localizedDescription
+                self.presentErrorAlert = true
             }
             
             isLoading = false
