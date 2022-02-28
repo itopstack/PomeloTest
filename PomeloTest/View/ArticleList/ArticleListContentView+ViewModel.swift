@@ -44,7 +44,7 @@ extension ArticleListContentView {
         }
         
         func fetchArticles() async {
-            guard let url = URL(string: "https://api.nytimes.com/svc/mostpopular/v2/viewed/\(period.valueInDay).json?api-key=zF125X7ymsICk7EhIvzcQrJaAVPFoUc6") else { return }
+            guard let url = URL(string: "http://127.0.0.1:5000/articles/\(period.valueInDay)") else { return }
             
             isLoading = true
             
