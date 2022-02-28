@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A04086827CCC24E00B2176E /* PeriodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A04086727CCC24E00B2176E /* PeriodTests.swift */; };
 		9A0B821127C4F83E007812C1 /* PomeloTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A0B821027C4F83E007812C1 /* PomeloTestApp.swift */; };
 		9A0B821527C4F83F007812C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0B821427C4F83F007812C1 /* Assets.xcassets */; };
 		9A0B821827C4F83F007812C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A0B821727C4F83F007812C1 /* Preview Assets.xcassets */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9A04086727CCC24E00B2176E /* PeriodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodTests.swift; sourceTree = "<group>"; };
 		9A0B820D27C4F83E007812C1 /* PomeloTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PomeloTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A0B821027C4F83E007812C1 /* PomeloTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PomeloTestApp.swift; sourceTree = "<group>"; };
 		9A0B821427C4F83F007812C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			children = (
 				9ACADDAC27C6005600D53293 /* ArticleTests.swift */,
 				9ACADDB427C6075D00D53293 /* NetworkErrorTests.swift */,
+				9A04086727CCC24E00B2176E /* PeriodTests.swift */,
 			);
 			path = ModelTests;
 			sourceTree = "<group>";
@@ -346,6 +349,7 @@
 				9ACADDAD27C6005600D53293 /* ArticleTests.swift in Sources */,
 				9ACADDB527C6075D00D53293 /* NetworkErrorTests.swift in Sources */,
 				9ACADDB827C60AC700D53293 /* NewYorkTimesArticleLoaderTests.swift in Sources */,
+				9A04086827CCC24E00B2176E /* PeriodTests.swift in Sources */,
 				9A0DE9FC27CB713100937C1E /* ArticleDetailContentView+ViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
