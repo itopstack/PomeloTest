@@ -11,4 +11,4 @@ protocol NetworkSession: AnyObject {
     func data(for request: URLRequest, delegate: URLSessionTaskDelegate?) async throws -> (Data, URLResponse)
 }
 
-extension URLSession: NetworkSession {}
+extension URLSession: NetworkSession {} // Make URLSession conform to a protocol so we can mock it in unit testing

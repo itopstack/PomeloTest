@@ -44,6 +44,7 @@ struct ArticleListContentView: View {
                 }
             }
             .task {
+                // Prevent duplicate loading articles when go back and forth between list's view and detail's view
                 if viewModel.isFirstLoadArticle {
                     await viewModel.fetchArticles()
                     viewModel.isFirstLoadArticle = false

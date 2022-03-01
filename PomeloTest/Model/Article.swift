@@ -7,6 +7,8 @@
 
 import Foundation
 
+// We use optional for every property because in case some key is missing from json response, we still able to decode it
+
 struct Metadata: Codable {
     let numberOfResults: Int?
     let articles: [Article]?

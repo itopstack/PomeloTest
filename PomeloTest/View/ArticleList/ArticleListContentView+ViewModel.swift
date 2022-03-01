@@ -15,7 +15,7 @@ extension ArticleListContentView {
         
         @Published private(set) var isLoading = false
         @Published var searchText = ""
-        @Published private var sections: [ArticleSection] = []
+        @Published private var sections: [ArticleSection] = [] // List view datasource
         @Published var presentErrorAlert = false
         @Published private(set) var errorMessage: String?
         private var articles: [Article] = []
@@ -69,7 +69,7 @@ extension ArticleListContentView {
                     dict["Others", default: []].append(article)
                 }
             }
-            let sortedDict = dict.sorted(by: { $0.key < $1.key })
+            let sortedDict = dict.sorted(by: { $0.key < $1.key }) // We need to sort dictionary from its key so the ordered of items will be the same
             
             var sections: [ArticleSection] = []
             for tuple in sortedDict {
@@ -81,7 +81,7 @@ extension ArticleListContentView {
         }
         
         func updatePeriod(_ period: Period) async {
-            guard period != self.period else { return }
+            guard period != self.period else { return } // Prevent unnecessary update period
             self.period = period
             await fetchArticles()
         }

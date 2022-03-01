@@ -40,11 +40,11 @@ extension ArticleDetailContentView {
         }
         
         func imageWidth(from screenWidth: CGFloat) -> CGFloat {
-            min(screenWidth, 440)
+            min(screenWidth, 440) // 440 is remote image's width so we are making sure that the image will display correctly ratio
         }
         
         func imageHeight(from screenWidth: CGFloat) -> CGFloat {
-            imageWidth(from: screenWidth) * 293/440
+            imageWidth(from: screenWidth) * 293/440 // 293/440 is ratio between remote image's height and width
         }
         
         var articleLink: URL? {

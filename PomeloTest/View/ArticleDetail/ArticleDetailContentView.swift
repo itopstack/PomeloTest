@@ -72,7 +72,7 @@ struct ArticleDetailContentView: View {
                 .toolbar {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
-                            viewModel.presentShareActivity = true
+                            viewModel.presentShareActivity = true // Show share sheet
                         } label: {
                             Image(systemName: "square.and.arrow.up")
                         }

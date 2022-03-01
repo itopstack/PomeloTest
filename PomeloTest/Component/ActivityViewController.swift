@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 
+/// SwiftUI wrapper class for using UIActivityViewController in UIKit
 struct ActivityViewController: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = UIActivityViewController

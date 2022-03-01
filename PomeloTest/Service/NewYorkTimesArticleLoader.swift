@@ -38,7 +38,7 @@ struct NewYorkTimesArticleLoader: NewYorkTimesArticleLoaderInterface {
             throw NetworkError.serverError
         case 200:
             let metadata = try JSONDecoder().decode(Metadata.self, from: data)
-            return metadata.articles ?? []
+            return metadata.articles ?? [] // In case missing 'results' key from json response we send empty article back
         default:
             throw NetworkError.unknown
         }

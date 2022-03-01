@@ -63,7 +63,7 @@ final class ArticleTests: XCTestCase {
     
     func testInitMetadata() {
         // Given
-        let expectedNumberOfResults = 20
+        let expectedNumberOfResults = 1
         let expectedArticles: [Article] = [ArticleCellContentView_Previews.mockArticle]
         
         // When
