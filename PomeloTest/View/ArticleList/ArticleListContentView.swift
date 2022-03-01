@@ -101,6 +101,7 @@ struct ArticleListContentView: View {
                 }
             }
             
+            // Placeholder view for ipad
             VStack(spacing: 16) {
                 Text("Welcome to PomeloTest!")
                     .font(.largeTitle)
