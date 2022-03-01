@@ -98,6 +98,13 @@ struct ArticleListContentView: View {
                     }
                 }
             }
+            
+            VStack(spacing: 16) {
+                Text("Welcome to PomeloTest!")
+                    .font(.largeTitle)
+                Text("Please select a resort from the left-hand menu; swipe from the left edge to show it.")
+                    .foregroundColor(.secondary)
+            }
         }
     }
 }
