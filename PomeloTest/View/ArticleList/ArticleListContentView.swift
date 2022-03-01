@@ -39,7 +39,9 @@ struct ArticleListContentView: View {
                         Text(viewModel.errorMessage ?? "")
                     })
                     .refreshable {
-                        await viewModel.fetchArticles()
+                        Task {
+                            await viewModel.fetchArticles()
+                        }
                     }
                 }
             }
