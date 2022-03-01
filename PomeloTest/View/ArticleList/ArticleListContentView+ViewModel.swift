@@ -44,7 +44,8 @@ extension ArticleListContentView {
         }
         
         func fetchArticles() async {
-            guard let url = URL(string: "http://127.0.0.1:5000/articles/\(period.valueInDay)") else { return }
+            let urlString = "http://127.0.0.1:5000/articles/\(period.valueInDay)"
+            guard let url = URL(string: urlString) else { return }
             
             isLoading = true
             
